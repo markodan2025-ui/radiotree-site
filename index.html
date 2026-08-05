@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioTree — Your World of Radio</title>
+<meta name="description" content="RadioTree is an internet radio app for Android TV. 50,000+ stations worldwide, lossless FLAC streaming, curated collections and a living globe screensaver.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0A0A0C;--ink:#F4EFE7;--dim:#A39A8C;--faint:#6A6255;--amb:#E8A24A;--line:rgba(255,255,255,.09)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:radial-gradient(900px 480px at 70% -10%, rgba(232,162,74,.10), transparent 60%),var(--bg);
+    color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;
+    display:flex;flex-direction:column}
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px;width:100%}
+  header{padding:34px 0;display:flex;align-items:center;gap:14px}
+  .wordmark{font-size:22px;font-weight:800}.wordmark span{color:var(--amb)}
+  main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:40px 0 60px}
+  .kicker{color:var(--amb);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}
+  h1{font-size:clamp(42px,7vw,76px);font-weight:900;letter-spacing:-.03em;line-height:1.02;text-transform:uppercase}
+  h1 em{font-style:normal;color:var(--amb)}
+  .sub{color:var(--dim);font-size:clamp(16px,2.4vw,19px);line-height:1.6;margin:26px 0 36px;max-width:620px}
+  .badges{display:flex;gap:10px;flex-wrap:wrap}
+  .badge{border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:600;color:var(--dim)}
+  .badge.hot{color:var(--amb);border-color:rgba(232,162,74,.4)}
+  .soon{margin-top:44px;color:var(--faint);font-size:14px}
+  .soon b{color:var(--ink);font-weight:700}
+  footer{border-top:1px solid var(--line);padding:26px 0 34px;color:var(--faint);font-size:13px;line-height:1.8}
+  footer a{color:var(--dim);text-decoration:none}
+  .logo{width:44px;height:44px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <svg class="logo" viewBox="0 0 100 100" fill="none">
+    <line x1="50" y1="88" x2="50" y2="46" stroke="#E8A24A" stroke-width="8" stroke-linecap="round"/>
+    <path d="M36 88 Q40 78 50 78" stroke="#E8A24A" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M64 88 Q60 78 50 78" stroke="#E8A24A" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M31 42 A 27 27 0 0 1 69 42" stroke="#E8A24A" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M22 50 A 39 39 0 0 1 78 50" stroke="#E8A24A" stroke-width="8" fill="none" stroke-linecap="round" opacity=".75"/>
+    <path d="M40 36 A 14 14 0 0 1 60 36" stroke="#E8A24A" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <circle cx="50" cy="34" r="6" fill="#F4EFE7"/>
+  </svg>
+  <div class="wordmark">Radio<span>Tree</span></div>
+</header>
+
+<main>
+  <div class="kicker">Internet radio for Android TV</div>
+  <h1>Your world<br>of <em>radio.</em></h1>
+  <p class="sub">50,000+ live stations from every corner of the planet. Lossless FLAC streams for audiophiles,
+     curated collections, background playback, and a living globe that shows where your music is coming from —
+     all designed for the biggest screen in your home.</p>
+  <div class="badges">
+    <div class="badge hot">◆ Audiophile · FLAC</div>
+    <div class="badge">50,000+ stations</div>
+    <div class="badge">Curated collections</div>
+    <div class="badge">Globe screensaver</div>
+    <div class="badge">Android TV native</div>
+  </div>
+  <p class="soon"><b>Coming soon to Google Play.</b> Currently in private testing.</p>
+</main>
+
+<footer>
+  RadioTree is developed and published by <b>3 POINT TREE d.o.o.</b>, Zagreb, Croatia.<br>
+  Contact: <a href="mailto:info@radiotree.app">info@radiotree.app</a> · © 2026 3 Point Tree d.o.o. All rights reserved.
+</footer>
+</div>
+</body>
+</html>
