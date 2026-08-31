@@ -102,6 +102,15 @@
   footer{padding:60px 0 80px;border-top:1px solid var(--line);color:var(--dim);font-size:14px}
   footer a{color:var(--amber);text-decoration:none}
   footer .row{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:center}
+
+  /* language switcher — same weight as the nav links, never louder */
+  #langs{display:inline-flex;gap:2px;margin-left:14px;vertical-align:middle}
+  #langs button{font-family:var(--fm);font-size:11px;letter-spacing:.08em;
+    color:var(--faint);background:transparent;border:0;padding:4px 6px;
+    border-radius:6px;cursor:pointer;line-height:1}
+  #langs button:hover{color:var(--ink)}
+  #langs button.on{color:var(--live)}
+  @media(max-width:520px){ #langs{margin-left:8px} #langs button{padding:4px 4px} }
 </style>
 </head>
 <body>
@@ -110,8 +119,9 @@
   <div class="wrap row">
     <a class="mark" href="/">Radio<span>Tree</span></a>
     <div class="navlinks">
-      <a href="#features">Features</a>
-      <a href="/privacy">Privacy</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="/privacy" data-i18n="nav.privacy">Privacy</a>
+      <span class="langs" id="langs"></span>
     </div>
   </div>
 </nav>
@@ -121,25 +131,21 @@
     <div class="banner-img"></div>
     <div class="banner-veil"></div>
     <div class="wrap banner-copy">
-      <div class="kicker">For Android TV &amp; Google TV</div>
+      <div class="kicker" data-i18n="hero.kicker">For Android TV &amp; Google TV</div>
       <h1>Radio<span>Tree</span></h1>
-      <p class="tagline">Every song has roots.</p>
-      <p class="undertag">Radio tells you the name. RadioTree tells you what it
-        is — and where it came from.</p>
+      <p class="tagline" data-i18n="hero.tagline">Every song has roots.</p>
+      <p class="undertag" data-i18n="hero.under">Radio tells you the name. RadioTree tells you what it is — and where it came from.</p>
       <ul class="hero-points">
-        <li><b>Every station measured, not guessed</b> — the app reads the real
-          bitrate off the stream itself. Catalogues lie; a measurement doesn't.</li>
-        <li><b>Over 70 verified lossless stations</b> — a Lossless tab that earned
-          its name, because every one of them was checked</li>
-        <li><b>350+ stations by artist</b> — Miles Davis, Bowie, Mozart, Taylor Swift</li>
-        <li><b>Who the artist is, what album the song came from</b> — one button, on screen</li>
-        <li><b>Rename, hide and reorder anything</b> — with the remote in your hand</li>
-        <li><b>Back up your whole profile</b> and restore it on another television</li>
+        <li data-i18n="hero.p1"></li>
+        <li data-i18n="hero.p2"></li>
+        <li data-i18n="hero.p3"></li>
+        <li data-i18n="hero.p4"></li>
+        <li data-i18n="hero.p5"></li>
+        <li data-i18n="hero.p6"></li>
       </ul>
       <div class="cta">
-        <a class="btn" href="#features">See what it does</a>
-        <span class="price"><b>Coming soon</b> to Google Play · one payment, €4.99
-          · no ads · no tracking · no subscription</span>
+        <a class="btn" href="#features" data-i18n="hero.cta">See what it does</a>
+        <span class="price" data-i18n="hero.price"></span>
       </div>
     </div>
   </div>
@@ -147,89 +153,72 @@
 
 <section id="features">
   <div class="wrap">
-    <div class="tag">Curated, not just listed</div>
-    <h2>Anyone can hand you <em>50,000 stations.</em> That is a database, not a product.</h2>
-    <p class="sub">Most apps pour an open directory onto your screen and call it a
-      catalogue. RadioTree adds the part nobody wants to do: choosing.</p>
-
+    <div class="tag" data-i18n="s1.tag">Curated, not just listed</div>
+    <h2 data-i18n="s1.h2"></h2>
+    <p class="sub" data-i18n="s1.sub"></p>
     <div class="stat">
-      <div><b>70+</b><span>lossless stations, hand-checked — and verified to actually
-        be lossless, not merely labelled that way</span></div>
-      <div><b>350+</b><span>stations gathered around the musicians you already
-        love, from Miles Davis to Taylor Swift</span></div>
-      <div><b>18</b><span>tabs you can reorder, rename around and hide, so the app
-        matches how you listen</span></div>
+      <div><b>70+</b><span data-i18n="s1.n1"></span></div>
+      <div><b>350+</b><span data-i18n="s1.n2"></span></div>
+      <div><b>18</b><span data-i18n="s1.n3"></span></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="tag">Roots</div>
-    <h2>Radio tells you the name. <em>RadioTree tells you where it came from.</em></h2>
-    <p class="sub">Radio gives you a name and moves on. Who the artist is, where
-      they are from, which album the song came off — that is usually one search
-      away on a phone you did not want to pick up. Here it is one button, on the
-      screen you are already looking at.</p>
+    <div class="tag" data-i18n="s2.tag">Roots</div>
+    <h2 data-i18n="s2.h2"></h2>
+    <p class="sub" data-i18n="s2.sub"></p>
     <div class="grid">
       <div class="card">
         <span class="glyph">◔</span>
-        <h3>The artist</h3>
-        <p>Who they are, where they are from, what they are known for — on the
-          screen, in your language wherever an entry exists. Press again to read
-          the whole thing.</p>
+        <h3 data-i18n="s2.c1h"></h3>
+        <p data-i18n="s2.c1p"></p>
       </div>
       <div class="card">
         <span class="glyph">◕</span>
-        <h3>The song</h3>
-        <p>The album it came from and the year it was released, and the
-          encyclopaedia entry where the song has one of its own.</p>
+        <h3 data-i18n="s2.c2h"></h3>
+        <p data-i18n="s2.c2p"></p>
       </div>
       <div class="card">
         <span class="glyph">◗</span>
-        <h3>The words</h3>
-        <p>Lyrics are not ours to print, so we hand them over instead: a code
-          on the screen opens them on your phone, where reading actually works.</p>
+        <h3 data-i18n="s2.c3h"></h3>
+        <p data-i18n="s2.c3p"></p>
       </div>
     </div>
-    <p class="sub" style="margin-top:26px">Text comes from Wikipedia and
-      MusicBrainz and is credited on screen. Lyrics are never copied — only
-      linked. No account, no subscription, no tracking — the same as everything
-      else here.</p>
-    <p class="sub" style="margin-top:18px;font-size:15px;color:#8B95A7">
-      One honest limit: the artist and title come from what the station itself
-      broadcasts. When a station sends nothing, sends an abbreviation, or merges
-      everything into one field, the information does not exist for us either.
-      We would rather show you nothing than show you something wrong.</p>
+    <p class="sub" style="margin-top:26px" data-i18n="s2.credit"></p>
+
+    <!-- Where ROOTS gets its information. Written as a specification, not as an
+         apology: the reader should finish it knowing how the feature works,
+         not feeling that something was excused. -->
+    <div class="quiet" style="margin-top:26px">
+      <p style="font-size:15px;color:#8B95A7" data-i18n="s2.src1"></p>
+      <p style="font-size:15px;color:#8B95A7" data-i18n="s2.src2"></p>
+      <p style="font-size:15px;color:#8B95A7" data-i18n="s2.src3"></p>
+      <p style="font-size:15px;color:#8B95A7" data-i18n="s2.src4"></p>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="tag">Built for the room, not the pocket</div>
-    <h2>A television is furniture. It should <em>look like something</em> when the
-      music plays.</h2>
+    <div class="tag" data-i18n="s3.tag"></div>
+    <h2 data-i18n="s3.h2"></h2>
     <div class="grid">
       <div class="card">
         <span class="glyph">◈</span>
-        <h3>Two hi-fi screensavers</h3>
-        <p>An analogue tuner with live needles and VU meters that move with the
-          music, and a network streamer with a lit display showing the station,
-          the artist and the format. Not wallpaper — instruments.</p>
+        <h3 data-i18n="s3.c1h"></h3>
+        <p data-i18n="s3.c1p"></p>
       </div>
       <div class="card">
         <span class="glyph">◐</span>
-        <h3>Four themes, one photograph</h3>
-        <p>The whole interface rests on a single dark image of a listening room,
-          so cards and lists read as glass over one surface rather than tiles
-          floating on black.</p>
+        <h3 data-i18n="s3.c2h"></h3>
+        <p data-i18n="s3.c2p"></p>
       </div>
       <div class="card">
         <span class="glyph">▤</span>
-        <h3>Screen edge control</h3>
-        <p>Older televisions crop the picture. Most apps ignore that and let their
-          own edges fall off your screen. RadioTree lets you dial the margin in,
-          in four steps.</p>
+        <h3 data-i18n="s3.c3h"></h3>
+        <p data-i18n="s3.c3p"></p>
       </div>
     </div>
   </div>
@@ -238,45 +227,27 @@
 <section>
   <div class="wrap split">
     <div>
-      <div class="tag">It keeps playing</div>
-      <h2>The part that decides whether you keep the app.</h2>
-      <p class="sub">A radio that stops is not a radio. This one was tested across
-        five televisions and three versions of Android until it stopped stopping.</p>
+      <div class="tag" data-i18n="s4.tag"></div>
+      <h2 data-i18n="s4.h2"></h2>
+      <p class="sub" data-i18n="s4.sub"></p>
       <ul class="checks">
-        <li>Background playback with full Android TV media controls, station logo
-          and live song titles on the home screen</li>
-        <li>Automatic reconnection with backoff when a stream drops — it comes
-          back on its own, without you reaching for the remote</li>
-        <li>The station list is cached on the device, so the app still works when
-          the catalogue behind it does not</li>
-        <li>Stations that redirect between http and https now play instead of
-          failing silently, which quietly revived a slice of the catalogue</li>
+        <li data-i18n="s4.l1"></li>
+        <li data-i18n="s4.l2"></li>
+        <li data-i18n="s4.l3"></li>
+        <li data-i18n="s4.l4"></li>
       </ul>
     </div>
     <div>
-      <div class="tag">Editing, on a television</div>
-      <h2>A few phone apps let you tidy your list. <em>None of them live on
-        your TV.</em></h2>
-      <p class="sub">Search any forum and you find the same complaint about the big
-        television radio apps, going back years: you cannot rename anything, you
-        cannot reorder anything, you cannot get rid of what you never listen to.
-        The usual advice to people who ask is to decompile the app and fix it
-        themselves. RadioTree simply lets you do it, with the remote in your hand.</p>
+      <div class="tag" data-i18n="s5.tag"></div>
+      <h2 data-i18n="s5.h2"></h2>
+      <p class="sub" data-i18n="s5.sub"></p>
       <ul class="checks">
-        <li><b style="color:#F0EADD;font-weight:600">Rename any station.</b> Not a
-          folder, not a favourite group — the station itself, to whatever you
-          actually call it</li>
-        <li><b style="color:#F0EADD;font-weight:600">Hide what you never use.</b>
-          Individual stations, or entire countries. Every one of them comes back
-          the moment you want it</li>
-        <li><b style="color:#F0EADD;font-weight:600">Move a station into another
-          genre</b> when the catalogue files jazz under pop, as it often does</li>
-        <li><b style="color:#F0EADD;font-weight:600">Reorder the tabs</b> into the
-          order you listen in, and pin the countries you return to</li>
-        <li><b style="color:#F0EADD;font-weight:600">Add your own stream addresses,</b>
-          for the station the catalogue has never heard of</li>
-        <li>Bloated catalogue names — bitrates, web addresses, “24/7 BEST HITS” —
-          are cleaned up on sight, while the real name stays intact for searching</li>
+        <li data-i18n="s5.l1"></li>
+        <li data-i18n="s5.l2"></li>
+        <li data-i18n="s5.l3"></li>
+        <li data-i18n="s5.l4"></li>
+        <li data-i18n="s5.l5"></li>
+        <li data-i18n="s5.l6"></li>
       </ul>
     </div>
   </div>
@@ -284,31 +255,24 @@
 
 <section>
   <div class="wrap">
-    <div class="tag">The one nobody else bothered with</div>
-    <h2>You spent an evening building your list. <em>Then you bought a new TV.</em></h2>
-    <p class="sub">In almost every radio app, that evening is gone. RadioTree
-      exports the whole profile — favourites, your own stations, renames, hidden
-      items, tab order, theme, language, every setting — and puts it back exactly
-      as it was. Direct transfer between televisions over your home network
-      arrives in the next update.</p>
+    <div class="tag" data-i18n="s6.tag"></div>
+    <h2 data-i18n="s6.h2"></h2>
+    <p class="sub" data-i18n="s6.sub"></p>
     <div class="grid">
       <div class="card">
         <span class="glyph">⬒</span>
-        <h3>Save to the device</h3>
-        <p>One file, written to your television's own storage. It survives a
-          reinstall, and it can be pulled off over USB.</p>
+        <h3 data-i18n="s6.c1h"></h3>
+        <p data-i18n="s6.c1p"></p>
       </div>
       <div class="card">
         <span class="glyph">⬚</span>
-        <h3>Nothing to sign up for</h3>
-        <p>No account, no cloud, no email address. The backup is a file on your
-          own television, and it belongs to you.</p>
+        <h3 data-i18n="s6.c2h"></h3>
+        <p data-i18n="s6.c2p"></p>
       </div>
       <div class="card">
         <span class="glyph">♪</span>
-        <h3>Lyrics on your phone</h3>
-        <p>Reading lyrics from three metres away was always a bad idea. Press the
-          button, scan the code, read them where reading works.</p>
+        <h3 data-i18n="s6.c3h"></h3>
+        <p data-i18n="s6.c3p"></p>
       </div>
     </div>
   </div>
@@ -317,30 +281,23 @@
 <section>
   <div class="wrap split">
     <div>
-      <div class="tag">Sound</div>
-      <h2>Honest about what it can and cannot do.</h2>
-      <p class="sub">FLAC decoding is built from Google's own media library rather
-        than bolted on. Pure Direct switches every stage of processing off, and
-        greys out the equaliser while it is on, so the signal path is not a
-        matter of belief.</p>
-      <p class="sub">What you will not find here is a claim of bit-perfect output.
-        Android televisions run their audio at a fixed rate and no app can change
-        that. We would rather say so than sell you a number.</p>
+      <div class="tag" data-i18n="s7.tag"></div>
+      <h2 data-i18n="s7.h2"></h2>
+      <p class="sub" data-i18n="s7.sub1"></p>
+      <p class="sub" data-i18n="s7.sub2"></p>
     </div>
     <div>
-      <div class="tag">What it does not do</div>
-      <h2>A short list, <em>deliberately.</em></h2>
+      <div class="tag" data-i18n="s8.tag"></div>
+      <h2 data-i18n="s8.h2"></h2>
       <ul class="checks nots">
-        <li>No advertising, ever — not banners, not audio spots</li>
-        <li>No analytics, no crash reporting, no tracking of any kind</li>
-        <li>No account, no registration, no email address required</li>
-        <li>No subscription — one payment and the app is yours</li>
-        <li>No data leaves your television. There is no server of ours to send it to.</li>
+        <li data-i18n="s8.l1"></li>
+        <li data-i18n="s8.l2"></li>
+        <li data-i18n="s8.l3"></li>
+        <li data-i18n="s8.l4"></li>
+        <li data-i18n="s8.l5"></li>
       </ul>
       <div class="quiet">
-        <p>RadioTree is made by <b style="color:#F0EADD;font-weight:400">3 POINT TREE d.o.o.</b>
-          in Croatia, and tested across five televisions and three generations of
-          Android before it was allowed out.</p>
+        <p data-i18n="s8.quiet"></p>
       </div>
     </div>
   </div>
@@ -348,15 +305,13 @@
 
 <section>
   <div class="wrap">
-    <div class="tag">Coming soon</div>
-    <h2>Four ninety-nine. Once.</h2>
-    <p class="sub">For Android TV and Google TV. Croatian, English, Spanish and
-      French. No trial, because there is nothing to hook you into afterwards.</p>
-    <p class="sub">RadioTree is finished and in final testing across five
-      televisions. It arrives on Google Play shortly.</p>
+    <div class="tag" data-i18n="s9.tag"></div>
+    <h2 data-i18n="s9.h2"></h2>
+    <p class="sub" data-i18n="s9.sub1"></p>
+    <p class="sub" data-i18n="s9.sub2"></p>
     <div class="cta">
-      <span class="btn" style="opacity:.55;cursor:default">Coming soon to Google Play</span>
-      <a class="btn ghost" href="/privacy">Read the privacy policy</a>
+      <span class="btn" style="opacity:.55;cursor:default" data-i18n="s9.btn"></span>
+      <a class="btn ghost" href="/privacy" data-i18n="s9.priv"></a>
     </div>
   </div>
 </section>
@@ -364,9 +319,415 @@
 <footer>
   <div class="wrap row">
     <div>© 2026 3 POINT TREE d.o.o. · RadioTree</div>
-    <div><a href="/privacy">Privacy</a> · <a href="mailto:support@radiotree.app">support@radiotree.app</a></div>
+    <div><a href="/privacy" data-i18n="nav.privacy">Privacy</a> · <a href="mailto:support@radiotree.app">support@radiotree.app</a></div>
   </div>
 </footer>
+
+<script>
+/* RadioTree — four languages from one page.
+   One file to maintain structurally; only the strings are duplicated.
+   Language is taken from the browser, then remembered. */
+const B = '<b>', _B = '</b>', E = '<em>', _E = '</em>';
+
+const I18N = {
+en: {
+  "lang.name":"English",
+  "meta.title":"RadioTree — lossless internet radio, built for the television",
+  "meta.desc":"Lossless internet radio for Android TV and Google TV. Curated FLAC stations, hi-fi screensavers, full profile backup. No ads, no tracking, no subscription.",
+  "nav.features":"Features", "nav.privacy":"Privacy",
+  "hero.kicker":"For Android TV &amp; Google TV",
+  "hero.tagline":"Every song has roots.",
+  "hero.under":"Radio tells you the name. RadioTree tells you what it is — and where it came from.",
+  "hero.p1":"<b>Every station measured, not guessed</b> — the app reads the real bitrate off the stream itself. Catalogues lie; a measurement doesn't.",
+  "hero.p2":"<b>Over 70 verified lossless stations</b> — a Lossless tab that earned its name, because every one of them was checked",
+  "hero.p3":"<b>350+ stations by artist</b> — Miles Davis, Bowie, Mozart, Taylor Swift",
+  "hero.p4":"<b>Who the artist is, what album the song came from</b> — one button, on screen",
+  "hero.p5":"<b>Rename, hide and reorder anything</b> — with the remote in your hand",
+  "hero.p6":"<b>Back up your whole profile</b> and restore it on another television",
+  "hero.cta":"See what it does",
+  "hero.price":"<b>Coming soon</b> to Google Play · one payment, €4.99 · no ads · no tracking · no subscription",
+  "s1.tag":"Curated, not just listed",
+  "s1.h2":"Anyone can hand you <em>50,000 stations.</em> That is a database, not a product.",
+  "s1.sub":"Most apps pour an open directory onto your screen and call it a catalogue. RadioTree adds the part nobody wants to do: choosing.",
+  "s1.n1":"lossless stations, hand-checked — and verified to actually be lossless, not merely labelled that way",
+  "s1.n2":"stations gathered around the musicians you already love, from Miles Davis to Taylor Swift",
+  "s1.n3":"tabs you can reorder, rename around and hide, so the app matches how you listen",
+  "s2.tag":"Roots",
+  "s2.h2":"Radio tells you the name. <em>RadioTree tells you where it came from.</em>",
+  "s2.sub":"Radio gives you a name and moves on. Who the artist is, where they are from, which album the song came off — that is usually one search away on a phone you did not want to pick up. Here it is one button, on the screen you are already looking at.",
+  "s2.c1h":"The artist",
+  "s2.c1p":"Who they are, where they are from, what they are known for — on the screen, in your language wherever an entry exists. Press again to read the whole thing.",
+  "s2.c2h":"The song",
+  "s2.c2p":"The album it came from and the year it was released, and the encyclopaedia entry where the song has one of its own.",
+  "s2.c3h":"The words",
+  "s2.c3p":"Lyrics are not ours to print, so we hand them over instead: a code on the screen opens them on your phone, where reading actually works.",
+  "s2.credit":"Text comes from Wikipedia and MusicBrainz and is credited on screen. Lyrics are never copied — only linked. No account, no subscription, no tracking — the same as everything else here.",
+  "s2.src1":"<b style=\"color:#F0EADD;font-weight:400\">Where ROOTS gets its information.</b> ROOTS reads from open sources — Wikipedia, MusicBrainz and Wikidata — starting from whatever the station sends with the track.",
+  "s2.src2":"Stations decide what they send. Some send the full name, some an abbreviation or a misspelling, some send the show title alongside the artist. A name cannot always be recovered from that.",
+  "s2.src3":"Some artists simply are not in those sources — session players, small labels, regional acts. Collaborations and ensembles named after their leader arrive as a single line but stand for more than one entry. We improve name matching with every release.",
+  "s2.src4":"When ROOTS finds nothing, it does not mean there is no story. It means there was nowhere to look this time.",
+  "s3.tag":"Built for the room, not the pocket",
+  "s3.h2":"A television is furniture. It should <em>look like something</em> when the music plays.",
+  "s3.c1h":"Two hi-fi screensavers",
+  "s3.c1p":"An analogue tuner with live needles and VU meters that move with the music, and a network streamer with a lit display showing the station, the artist and the format. Not wallpaper — instruments.",
+  "s3.c2h":"Four themes, one photograph",
+  "s3.c2p":"The whole interface rests on a single dark image of a listening room, so cards and lists read as glass over one surface rather than tiles floating on black.",
+  "s3.c3h":"Screen edge control",
+  "s3.c3p":"Older televisions crop the picture. Most apps ignore that and let their own edges fall off your screen. RadioTree lets you dial the margin in, in four steps.",
+  "s4.tag":"It keeps playing",
+  "s4.h2":"The part that decides whether you keep the app.",
+  "s4.sub":"A radio that stops is not a radio. This one was tested across five televisions and three versions of Android until it stopped stopping.",
+  "s4.l1":"Background playback with full Android TV media controls, station logo and live song titles on the home screen",
+  "s4.l2":"Automatic reconnection with backoff when a stream drops — it comes back on its own, without you reaching for the remote",
+  "s4.l3":"The station list is cached on the device, so the app still works when the catalogue behind it does not",
+  "s4.l4":"Stations that redirect between http and https now play instead of failing silently, which quietly revived a slice of the catalogue",
+  "s5.tag":"Editing, on a television",
+  "s5.h2":"A few phone apps let you tidy your list. <em>None of them live on your TV.</em>",
+  "s5.sub":"Search any forum and you find the same complaint about the big television radio apps, going back years: you cannot rename anything, you cannot reorder anything, you cannot get rid of what you never listen to. The usual advice to people who ask is to decompile the app and fix it themselves. RadioTree simply lets you do it, with the remote in your hand.",
+  "s5.l1":"<b style=\"color:#F0EADD;font-weight:600\">Rename any station.</b> Not a folder, not a favourite group — the station itself, to whatever you actually call it",
+  "s5.l2":"<b style=\"color:#F0EADD;font-weight:600\">Hide what you never use.</b> Individual stations, or entire countries. Every one of them comes back the moment you want it",
+  "s5.l3":"<b style=\"color:#F0EADD;font-weight:600\">Move a station into another genre</b> when the catalogue files jazz under pop, as it often does",
+  "s5.l4":"<b style=\"color:#F0EADD;font-weight:600\">Reorder the tabs</b> into the order you listen in, and pin the countries you return to",
+  "s5.l5":"<b style=\"color:#F0EADD;font-weight:600\">Add your own stream addresses,</b> for the station the catalogue has never heard of",
+  "s5.l6":"Bloated catalogue names — bitrates, web addresses, “24/7 BEST HITS” — are cleaned up on sight, while the real name stays intact for searching",
+  "s6.tag":"The one nobody else bothered with",
+  "s6.h2":"You spent an evening building your list. <em>Then you bought a new TV.</em>",
+  "s6.sub":"In almost every radio app, that evening is gone. RadioTree exports the whole profile — favourites, your own stations, renames, hidden items, tab order, theme, language, every setting — and puts it back exactly as it was. Direct transfer between televisions over your home network arrives in the next update.",
+  "s6.c1h":"Save to the device",
+  "s6.c1p":"One file, written to your television's own storage. It survives a reinstall, and it can be pulled off over USB.",
+  "s6.c2h":"Nothing to sign up for",
+  "s6.c2p":"No account, no cloud, no email address. The backup is a file on your own television, and it belongs to you.",
+  "s6.c3h":"Lyrics on your phone",
+  "s6.c3p":"Reading lyrics from three metres away was always a bad idea. Press the button, scan the code, read them where reading works.",
+  "s7.tag":"Sound",
+  "s7.h2":"Honest about what it can and cannot do.",
+  "s7.sub1":"FLAC decoding is built from Google's own media library rather than bolted on. Pure Direct switches every stage of processing off, and greys out the equaliser while it is on, so the signal path is not a matter of belief.",
+  "s7.sub2":"What you will not find here is a claim of bit-perfect output. Android televisions run their audio at a fixed rate and no app can change that. We would rather say so than sell you a number.",
+  "s8.tag":"What it does not do",
+  "s8.h2":"A short list, <em>deliberately.</em>",
+  "s8.l1":"No advertising, ever — not banners, not audio spots",
+  "s8.l2":"No analytics, no crash reporting, no tracking of any kind",
+  "s8.l3":"No account, no registration, no email address required",
+  "s8.l4":"No subscription — one payment and the app is yours",
+  "s8.l5":"No data leaves your television. There is no server of ours to send it to.",
+  "s8.quiet":"RadioTree is made by <b style=\"color:#F0EADD;font-weight:400\">3 POINT TREE d.o.o.</b> in Croatia, and tested across five televisions and three generations of Android before it was allowed out.",
+  "s9.tag":"Coming soon",
+  "s9.h2":"Four ninety-nine. Once.",
+  "s9.sub1":"For Android TV and Google TV. Croatian, English, Spanish and French. No trial, because there is nothing to hook you into afterwards.",
+  "s9.sub2":"RadioTree is finished and in final testing across five televisions. It arrives on Google Play shortly.",
+  "s9.btn":"Coming soon to Google Play",
+  "s9.priv":"Read the privacy policy"
+},
+
+hr: {
+  "lang.name":"Hrvatski",
+  "meta.title":"RadioTree — internetski radio bez gubitaka, za televizor",
+  "meta.desc":"Internetski radio bez gubitaka za Android TV i Google TV. Odabrane FLAC postaje, hi-fi čuvari zaslona, potpuna pohrana profila. Bez reklama, bez praćenja, bez pretplate.",
+  "nav.features":"Značajke", "nav.privacy":"Privatnost",
+  "hero.kicker":"Za Android TV i Google TV",
+  "hero.tagline":"Svaka pjesma ima korijen.",
+  "hero.under":"Radio ti kaže ime. RadioTree ti kaže što je to — i odakle je došlo.",
+  "hero.p1":"<b>Svaka postaja izmjerena, ne pretpostavljena</b> — aplikacija čita stvarni protok s toka. Katalozi lažu; mjerenje ne.",
+  "hero.p2":"<b>Preko 70 provjerenih lossless postaja</b> — kartica koja je zaslužila ime, jer je svaka provjerena",
+  "hero.p3":"<b>350+ postaja po izvođaču</b> — Miles Davis, Bowie, Mozart, Taylor Swift",
+  "hero.p4":"<b>Tko je izvođač, s kojeg je albuma pjesma</b> — jedan gumb, na zaslonu",
+  "hero.p5":"<b>Preimenuj, sakrij i posloži sve</b> — s daljinskim u ruci",
+  "hero.p6":"<b>Spremi cijeli profil</b> i vrati ga na drugom televizoru",
+  "hero.cta":"Pogledaj što radi",
+  "hero.price":"<b>Uskoro</b> na Google Playu · jedna uplata, 4,99 € · bez reklama · bez praćenja · bez pretplate",
+  "s1.tag":"Odabrano, ne samo popisano",
+  "s1.h2":"Svatko ti može dati <em>50.000 postaja.</em> To je baza, a ne proizvod.",
+  "s1.sub":"Većina aplikacija prospe otvoreni imenik po zaslonu i nazove ga katalogom. RadioTree dodaje ono što nitko ne želi raditi: biranje.",
+  "s1.n1":"lossless postaja, provjerenih rukom — i potvrđeno bez gubitaka, a ne samo tako označenih",
+  "s1.n2":"postaja okupljenih oko glazbenika koje već voliš, od Milesa Davisa do Taylor Swift",
+  "s1.n3":"kartica koje možeš presložiti, preimenovati i sakriti, da aplikacija prati kako slušaš",
+  "s2.tag":"Roots",
+  "s2.h2":"Radio ti kaže ime. <em>RadioTree ti kaže odakle je došlo.</em>",
+  "s2.sub":"Radio ti da ime i ide dalje. Tko je izvođač, odakle je, s kojeg je albuma pjesma — to je obično jedna pretraga na mobitelu koji nisi htio uzeti u ruke. Ovdje je jedan gumb, na zaslonu u koji već gledaš.",
+  "s2.c1h":"Izvođač",
+  "s2.c1p":"Tko je, odakle je, po čemu je poznat — na zaslonu, na tvom jeziku gdje god postoji zapis. Pritisni ponovno za cijeli tekst.",
+  "s2.c2h":"Pjesma",
+  "s2.c2p":"Album s kojeg dolazi i godina izdanja, te enciklopedijski zapis ondje gdje pjesma ima svoj vlastiti.",
+  "s2.c3h":"Riječi",
+  "s2.c3p":"Tekstovi nisu naši da ih ispisujemo, pa ih prosljeđujemo: kod na zaslonu otvara ih na tvom mobitelu, gdje čitanje stvarno funkcionira.",
+  "s2.credit":"Tekst dolazi s Wikipedije i MusicBrainza i izvor se navodi na zaslonu. Tekstovi pjesama nikad se ne prepisuju — samo povezuju. Bez računa, bez pretplate, bez praćenja — kao i sve ostalo ovdje.",
+  "s2.src1":"<b style=\"color:#F0EADD;font-weight:400\">Odakle ROOTS zna.</b> ROOTS čita iz otvorenih izvora — Wikipedije, MusicBrainza i Wikidate — a polazi od onoga što postaja pošalje uz pjesmu.",
+  "s2.src2":"Postaje same odlučuju što šalju. Neke pošalju puno ime, neke kraticu ili pogrešno napisano ime, a neke uz izvođača pošalju i naziv emisije. Iz takvog zapisa se ime ne da uvijek prepoznati.",
+  "s2.src3":"Ima i izvođača kojih u tim izvorima nema — sesijskih glazbenika, malih izdanja, lokalnih imena. Suradnje i sastavi nazvani po vođi stižu kao jedan zapis, a iza njega stoji više od jednog članka. Prepoznavanje imena popravljamo sa svakom verzijom.",
+  "s2.src4":"Kad ROOTS ne nađe ništa, to ne znači da priče nema. Znači da je ovaj put nije bilo gdje potražiti.",
+  "s3.tag":"Za sobu, ne za džep",
+  "s3.h2":"Televizor je namještaj. Trebao bi <em>izgledati kao nešto</em> dok glazba svira.",
+  "s3.c1h":"Dva hi-fi čuvara zaslona",
+  "s3.c1p":"Analogni tuner sa živim kazaljkama i VU pokazivačima koji se miču uz glazbu, i mrežni streamer s osvijetljenim zaslonom koji pokazuje postaju, izvođača i format. Nisu tapeta — instrumenti su.",
+  "s3.c2h":"Četiri teme, jedna fotografija",
+  "s3.c2p":"Cijelo sučelje počiva na jednoj tamnoj slici sobe za slušanje, pa se kartice i popisi čitaju kao staklo nad jednom plohom, a ne kao pločice koje lebde nad crnim.",
+  "s3.c3h":"Nadzor ruba zaslona",
+  "s3.c3p":"Stariji televizori režu sliku. Većina aplikacija to zanemari i pusti da im rubovi padnu s tvog zaslona. RadioTree ti da da namjestiš marginu, u četiri koraka.",
+  "s4.tag":"Nastavlja svirati",
+  "s4.h2":"Dio koji odlučuje hoćeš li zadržati aplikaciju.",
+  "s4.sub":"Radio koji stane nije radio. Ovaj je isproban na pet televizora i tri verzije Androida dok nije prestao stajati.",
+  "s4.l1":"Sviranje u pozadini s punim Android TV upravljanjem, logotipom postaje i živim naslovima pjesama na početnom zaslonu",
+  "s4.l2":"Samostalno ponovno spajanje s odgodom kad tok padne — vrati se sam, bez posezanja za daljinskim",
+  "s4.l3":"Popis postaja pohranjen je na uređaju, pa aplikacija radi i kad katalog iza nje ne radi",
+  "s4.l4":"Postaje koje preusmjeravaju između http i https sada sviraju umjesto da tiho padnu, čime je oživio dio kataloga",
+  "s5.tag":"Uređivanje, na televizoru",
+  "s5.h2":"Nekoliko mobilnih aplikacija da ti da posložiš popis. <em>Nijedna ne živi na tvom TV-u.</em>",
+  "s5.sub":"Pretraži bilo koji forum i naći ćeš istu pritužbu na velike televizijske radio aplikacije, godinama unatrag: ne možeš ništa preimenovati, ne možeš ništa presložiti, ne možeš se riješiti onoga što nikad ne slušaš. Uobičajen savjet onima koji pitaju jest da rastave aplikaciju i sami je poprave. RadioTree ti to jednostavno dopušta, s daljinskim u ruci.",
+  "s5.l1":"<b style=\"color:#F0EADD;font-weight:600\">Preimenuj bilo koju postaju.</b> Ne mapu, ne skupinu omiljenih — samu postaju, u ono kako je stvarno zoveš",
+  "s5.l2":"<b style=\"color:#F0EADD;font-weight:600\">Sakrij ono što ne koristiš.</b> Pojedine postaje ili cijele zemlje. Svaka se vraća čim je poželiš",
+  "s5.l3":"<b style=\"color:#F0EADD;font-weight:600\">Premjesti postaju u drugi žanr</b> kad katalog svrsta jazz pod pop, kako često čini",
+  "s5.l4":"<b style=\"color:#F0EADD;font-weight:600\">Presloži kartice</b> po redu kojim slušaš i prikvači zemlje kojima se vraćaš",
+  "s5.l5":"<b style=\"color:#F0EADD;font-weight:600\">Dodaj vlastite adrese tokova,</b> za postaju za koju katalog nikad nije čuo",
+  "s5.l6":"Natrpani nazivi iz kataloga — protoci, web adrese, „24/7 BEST HITS” — čiste se na licu mjesta, a pravo ime ostaje netaknuto za pretragu",
+  "s6.tag":"Onaj kojim se nitko drugi nije bavio",
+  "s6.h2":"Proveo si večer slažući svoj popis. <em>Onda si kupio novi TV.</em>",
+  "s6.sub":"U gotovo svakoj radio aplikaciji ta je večer nestala. RadioTree izvozi cijeli profil — omiljene, tvoje postaje, preimenovanja, sakrivene stavke, redoslijed kartica, temu, jezik, svaku postavku — i vraća ga točno kakav je bio. Izravni prijenos između televizora preko kućne mreže stiže u sljedećem izdanju.",
+  "s6.c1h":"Spremi na uređaj",
+  "s6.c1p":"Jedna datoteka, zapisana u vlastitu pohranu televizora. Preživi ponovnu instalaciju i može se skinuti preko USB-a.",
+  "s6.c2h":"Ništa za registrirati",
+  "s6.c2p":"Bez računa, bez oblaka, bez adrese e-pošte. Pohrana je datoteka na tvom televizoru i pripada tebi.",
+  "s6.c3h":"Tekstovi na mobitelu",
+  "s6.c3p":"Čitanje teksta s tri metra oduvijek je bila loša zamisao. Pritisni gumb, skeniraj kod, čitaj ondje gdje čitanje funkcionira.",
+  "s7.tag":"Zvuk",
+  "s7.h2":"Pošteno o tome što može, a što ne.",
+  "s7.sub1":"FLAC dekodiranje građeno je iz Googleove vlastite medijske knjižnice, a ne prikalemljeno. Pure Direct isključuje svaki stupanj obrade i zasivi ekvilizator dok je uključen, pa put signala nije stvar vjerovanja.",
+  "s7.sub2":"Ono što ovdje nećeš naći jest tvrdnja o bit-perfect izlazu. Android televizori vode zvuk na stalnoj frekvenciji i nijedna aplikacija to ne može promijeniti. Radije to kažemo nego da ti prodamo broj.",
+  "s8.tag":"Što ne radi",
+  "s8.h2":"Kratak popis, <em>namjerno.</em>",
+  "s8.l1":"Nikakvih reklama, nikad — ni natpisa, ni zvučnih spotova",
+  "s8.l2":"Bez analitike, bez izvještaja o rušenju, bez ikakvog praćenja",
+  "s8.l3":"Bez računa, bez registracije, bez tražene adrese e-pošte",
+  "s8.l4":"Bez pretplate — jedna uplata i aplikacija je tvoja",
+  "s8.l5":"Nijedan podatak ne napušta tvoj televizor. Nema našeg poslužitelja kojemu bi se slao.",
+  "s8.quiet":"RadioTree radi <b style=\"color:#F0EADD;font-weight:400\">3 POINT TREE d.o.o.</b> u Hrvatskoj, a isproban je na pet televizora i tri naraštaja Androida prije nego je pušten van.",
+  "s9.tag":"Uskoro",
+  "s9.h2":"Četiri devedeset devet. Jednom.",
+  "s9.sub1":"Za Android TV i Google TV. Hrvatski, engleski, španjolski i francuski. Bez probnog razdoblja, jer te nakon njega nema na što navući.",
+  "s9.sub2":"RadioTree je gotov i u završnom ispitivanju na pet televizora. Uskoro stiže na Google Play.",
+  "s9.btn":"Uskoro na Google Playu",
+  "s9.priv":"Pročitaj pravila privatnosti"
+},
+
+es: {
+  "lang.name":"Español",
+  "meta.title":"RadioTree — radio por internet sin pérdidas, hecha para el televisor",
+  "meta.desc":"Radio por internet sin pérdidas para Android TV y Google TV. Emisoras FLAC seleccionadas, salvapantallas hi-fi, copia completa del perfil. Sin anuncios, sin rastreo, sin suscripción.",
+  "nav.features":"Funciones", "nav.privacy":"Privacidad",
+  "hero.kicker":"Para Android TV y Google TV",
+  "hero.tagline":"Cada canción tiene raíces.",
+  "hero.under":"La radio te dice el nombre. RadioTree te dice qué es — y de dónde viene.",
+  "hero.p1":"<b>Cada emisora medida, no supuesta</b> — la app lee el bitrate real del propio flujo. Los catálogos mienten; una medición no.",
+  "hero.p2":"<b>Más de 70 emisoras sin pérdidas verificadas</b> — una pestaña Lossless que se ganó el nombre, porque cada una fue comprobada",
+  "hero.p3":"<b>Más de 350 emisoras por artista</b> — Miles Davis, Bowie, Mozart, Taylor Swift",
+  "hero.p4":"<b>Quién es el artista, de qué álbum viene la canción</b> — un botón, en pantalla",
+  "hero.p5":"<b>Renombra, oculta y reordena lo que quieras</b> — con el mando en la mano",
+  "hero.p6":"<b>Guarda todo tu perfil</b> y restáuralo en otro televisor",
+  "hero.cta":"Mira lo que hace",
+  "hero.price":"<b>Próximamente</b> en Google Play · un solo pago, 4,99 € · sin anuncios · sin rastreo · sin suscripción",
+  "s1.tag":"Seleccionado, no solo listado",
+  "s1.h2":"Cualquiera puede darte <em>50.000 emisoras.</em> Eso es una base de datos, no un producto.",
+  "s1.sub":"La mayoría de las apps vuelca un directorio abierto en tu pantalla y lo llama catálogo. RadioTree añade la parte que nadie quiere hacer: elegir.",
+  "s1.n1":"emisoras sin pérdidas, comprobadas a mano — y verificadas como realmente sin pérdidas, no solo etiquetadas así",
+  "s1.n2":"emisoras reunidas en torno a los músicos que ya te gustan, de Miles Davis a Taylor Swift",
+  "s1.n3":"pestañas que puedes reordenar, renombrar y ocultar, para que la app siga tu forma de escuchar",
+  "s2.tag":"Roots",
+  "s2.h2":"La radio te dice el nombre. <em>RadioTree te dice de dónde viene.</em>",
+  "s2.sub":"La radio te da un nombre y sigue adelante. Quién es el artista, de dónde es, de qué álbum salió la canción — eso suele estar a una búsqueda de distancia en un móvil que no querías coger. Aquí es un botón, en la pantalla que ya estás mirando.",
+  "s2.c1h":"El artista",
+  "s2.c1p":"Quién es, de dónde viene, por qué se le conoce — en pantalla, en tu idioma allí donde exista una entrada. Pulsa otra vez para leerlo entero.",
+  "s2.c2h":"La canción",
+  "s2.c2p":"El álbum del que viene y el año en que salió, y la entrada enciclopédica allí donde la canción tiene la suya propia.",
+  "s2.c3h":"Las letras",
+  "s2.c3p":"Las letras no son nuestras para imprimirlas, así que te las pasamos: un código en pantalla las abre en tu móvil, donde leer sí funciona.",
+  "s2.credit":"El texto procede de Wikipedia y MusicBrainz y se acredita en pantalla. Las letras nunca se copian — solo se enlazan. Sin cuenta, sin suscripción, sin rastreo — igual que todo lo demás aquí.",
+  "s2.src1":"<b style=\"color:#F0EADD;font-weight:400\">De dónde saca ROOTS la información.</b> ROOTS lee de fuentes abiertas — Wikipedia, MusicBrainz y Wikidata — partiendo de lo que la emisora envía junto a la canción.",
+  "s2.src2":"Las emisoras deciden qué envían. Unas mandan el nombre completo, otras una abreviatura o un nombre mal escrito, y otras añaden el título del programa junto al artista. De ahí no siempre se puede recuperar un nombre.",
+  "s2.src3":"Hay artistas que sencillamente no están en esas fuentes — músicos de sesión, sellos pequeños, nombres locales. Las colaboraciones y los grupos bautizados con el nombre de su líder llegan en una sola línea pero representan más de una entrada. Mejoramos el reconocimiento de nombres en cada versión.",
+  "s2.src4":"Cuando ROOTS no encuentra nada, no significa que no haya historia. Significa que esta vez no había dónde buscarla.",
+  "s3.tag":"Pensado para la sala, no para el bolsillo",
+  "s3.h2":"Un televisor es un mueble. Debería <em>parecer algo</em> mientras suena la música.",
+  "s3.c1h":"Dos salvapantallas hi-fi",
+  "s3.c1p":"Un sintonizador analógico con agujas vivas y vúmetros que se mueven con la música, y un reproductor de red con pantalla iluminada que muestra la emisora, el artista y el formato. No son fondos de pantalla — son instrumentos.",
+  "s3.c2h":"Cuatro temas, una fotografía",
+  "s3.c2p":"Toda la interfaz descansa sobre una única imagen oscura de una sala de escucha, de modo que tarjetas y listas se leen como cristal sobre una superficie, y no como piezas flotando en negro.",
+  "s3.c3h":"Control del borde de pantalla",
+  "s3.c3p":"Los televisores antiguos recortan la imagen. La mayoría de las apps lo ignora y deja que sus bordes se caigan de tu pantalla. RadioTree te deja ajustar el margen, en cuatro pasos.",
+  "s4.tag":"Sigue sonando",
+  "s4.h2":"La parte que decide si te quedas con la app.",
+  "s4.sub":"Una radio que se para no es una radio. Esta se probó en cinco televisores y tres versiones de Android hasta que dejó de pararse.",
+  "s4.l1":"Reproducción en segundo plano con los controles multimedia completos de Android TV, logotipo de la emisora y títulos en vivo en la pantalla de inicio",
+  "s4.l2":"Reconexión automática con espera progresiva cuando cae el flujo — vuelve sola, sin que toques el mando",
+  "s4.l3":"La lista de emisoras se guarda en el dispositivo, así que la app sigue funcionando aunque el catálogo detrás no lo haga",
+  "s4.l4":"Las emisoras que redirigen entre http y https ahora suenan en vez de fallar en silencio, lo que revivió discretamente una parte del catálogo",
+  "s5.tag":"Editar, en un televisor",
+  "s5.h2":"Algunas apps de móvil te dejan ordenar tu lista. <em>Ninguna vive en tu televisor.</em>",
+  "s5.sub":"Busca en cualquier foro y encontrarás la misma queja sobre las grandes apps de radio para televisor, desde hace años: no puedes renombrar nada, no puedes reordenar nada, no puedes deshacerte de lo que nunca escuchas. El consejo habitual a quien pregunta es que descompile la app y lo arregle él mismo. RadioTree simplemente te deja hacerlo, con el mando en la mano.",
+  "s5.l1":"<b style=\"color:#F0EADD;font-weight:600\">Renombra cualquier emisora.</b> No una carpeta, no un grupo de favoritos — la emisora misma, como tú la llamas de verdad",
+  "s5.l2":"<b style=\"color:#F0EADD;font-weight:600\">Oculta lo que no usas.</b> Emisoras sueltas o países enteros. Todas vuelven en cuanto las quieras",
+  "s5.l3":"<b style=\"color:#F0EADD;font-weight:600\">Mueve una emisora a otro género</b> cuando el catálogo mete el jazz en pop, como suele pasar",
+  "s5.l4":"<b style=\"color:#F0EADD;font-weight:600\">Reordena las pestañas</b> según cómo escuchas, y fija los países a los que vuelves",
+  "s5.l5":"<b style=\"color:#F0EADD;font-weight:600\">Añade tus propias direcciones de flujo,</b> para la emisora de la que el catálogo nunca oyó hablar",
+  "s5.l6":"Los nombres recargados del catálogo — bitrates, direcciones web, «24/7 BEST HITS» — se limpian sobre la marcha, mientras el nombre real queda intacto para buscar",
+  "s6.tag":"El que nadie más se molestó en hacer",
+  "s6.h2":"Pasaste una tarde armando tu lista. <em>Luego compraste un televisor nuevo.</em>",
+  "s6.sub":"En casi cualquier app de radio, esa tarde se perdió. RadioTree exporta el perfil entero — favoritos, tus propias emisoras, renombrados, elementos ocultos, orden de pestañas, tema, idioma, cada ajuste — y lo devuelve exactamente como estaba. La transferencia directa entre televisores por la red doméstica llega en la próxima actualización.",
+  "s6.c1h":"Guardar en el dispositivo",
+  "s6.c1p":"Un archivo, escrito en el almacenamiento del propio televisor. Sobrevive a una reinstalación y se puede sacar por USB.",
+  "s6.c2h":"Nada que registrar",
+  "s6.c2p":"Sin cuenta, sin nube, sin correo electrónico. La copia es un archivo en tu propio televisor, y es tuya.",
+  "s6.c3h":"Letras en tu móvil",
+  "s6.c3p":"Leer letras a tres metros siempre fue mala idea. Pulsa el botón, escanea el código, léelas donde leer funciona.",
+  "s7.tag":"Sonido",
+  "s7.h2":"Honesto sobre lo que puede y lo que no.",
+  "s7.sub1":"La decodificación FLAC está construida sobre la propia biblioteca multimedia de Google, no añadida a posteriori. Pure Direct apaga cada etapa de procesado y atenúa el ecualizador mientras está activo, así que el camino de la señal no es cuestión de fe.",
+  "s7.sub2":"Lo que no encontrarás aquí es una promesa de salida bit-perfect. Los televisores Android reproducen el audio a una frecuencia fija y ninguna app puede cambiarlo. Preferimos decirlo antes que venderte un número.",
+  "s8.tag":"Lo que no hace",
+  "s8.h2":"Una lista corta, <em>a propósito.</em>",
+  "s8.l1":"Nada de publicidad, nunca — ni banners, ni cuñas de audio",
+  "s8.l2":"Sin analíticas, sin informes de fallos, sin rastreo de ningún tipo",
+  "s8.l3":"Sin cuenta, sin registro, sin correo electrónico obligatorio",
+  "s8.l4":"Sin suscripción — un pago y la app es tuya",
+  "s8.l5":"Ningún dato sale de tu televisor. No hay servidor nuestro al que enviarlo.",
+  "s8.quiet":"RadioTree está hecha por <b style=\"color:#F0EADD;font-weight:400\">3 POINT TREE d.o.o.</b> en Croacia, y se probó en cinco televisores y tres generaciones de Android antes de dejarla salir.",
+  "s9.tag":"Próximamente",
+  "s9.h2":"Cuatro noventa y nueve. Una vez.",
+  "s9.sub1":"Para Android TV y Google TV. Croata, inglés, español y francés. Sin prueba gratuita, porque después no hay nada a lo que engancharte.",
+  "s9.sub2":"RadioTree está terminada y en pruebas finales en cinco televisores. Llega a Google Play en breve.",
+  "s9.btn":"Próximamente en Google Play",
+  "s9.priv":"Lee la política de privacidad"
+},
+
+fr: {
+  "lang.name":"Français",
+  "meta.title":"RadioTree — radio internet sans perte, pensée pour le téléviseur",
+  "meta.desc":"Radio internet sans perte pour Android TV et Google TV. Stations FLAC sélectionnées, écrans de veille hi-fi, sauvegarde complète du profil. Sans publicité, sans suivi, sans abonnement.",
+  "nav.features":"Fonctions", "nav.privacy":"Confidentialité",
+  "hero.kicker":"Pour Android TV et Google TV",
+  "hero.tagline":"Chaque morceau a des racines.",
+  "hero.under":"La radio vous donne le nom. RadioTree vous dit ce que c'est — et d'où cela vient.",
+  "hero.p1":"<b>Chaque station mesurée, non supposée</b> — l'application lit le débit réel sur le flux lui-même. Les catalogues mentent ; une mesure, non.",
+  "hero.p2":"<b>Plus de 70 stations sans perte vérifiées</b> — un onglet Lossless qui a mérité son nom, parce que chacune a été contrôlée",
+  "hero.p3":"<b>Plus de 350 stations par artiste</b> — Miles Davis, Bowie, Mozart, Taylor Swift",
+  "hero.p4":"<b>Qui est l'artiste, de quel album vient le morceau</b> — un bouton, à l'écran",
+  "hero.p5":"<b>Renommez, masquez et réorganisez tout</b> — la télécommande à la main",
+  "hero.p6":"<b>Sauvegardez tout votre profil</b> et restaurez-le sur un autre téléviseur",
+  "hero.cta":"Voir ce qu'elle fait",
+  "hero.price":"<b>Bientôt</b> sur Google Play · un seul paiement, 4,99 € · sans publicité · sans suivi · sans abonnement",
+  "s1.tag":"Sélectionné, pas seulement listé",
+  "s1.h2":"N'importe qui peut vous donner <em>50 000 stations.</em> C'est une base de données, pas un produit.",
+  "s1.sub":"La plupart des applications déversent un annuaire ouvert sur votre écran et appellent cela un catalogue. RadioTree ajoute ce que personne ne veut faire : choisir.",
+  "s1.n1":"stations sans perte, vérifiées à la main — et confirmées réellement sans perte, pas simplement étiquetées ainsi",
+  "s1.n2":"stations rassemblées autour des musiciens que vous aimez déjà, de Miles Davis à Taylor Swift",
+  "s1.n3":"onglets que vous pouvez réordonner, renommer et masquer, pour que l'application suive votre façon d'écouter",
+  "s2.tag":"Roots",
+  "s2.h2":"La radio vous donne le nom. <em>RadioTree vous dit d'où cela vient.</em>",
+  "s2.sub":"La radio vous donne un nom puis passe à autre chose. Qui est l'artiste, d'où il vient, de quel album sort le morceau — c'est en général à une recherche près sur un téléphone que vous n'aviez pas envie de prendre. Ici, c'est un bouton, sur l'écran que vous regardez déjà.",
+  "s2.c1h":"L'artiste",
+  "s2.c1p":"Qui il est, d'où il vient, ce pour quoi il est connu — à l'écran, dans votre langue partout où une entrée existe. Appuyez à nouveau pour tout lire.",
+  "s2.c2h":"Le morceau",
+  "s2.c2p":"L'album dont il provient et l'année de sa sortie, ainsi que la notice encyclopédique là où le morceau possède la sienne.",
+  "s2.c3h":"Les paroles",
+  "s2.c3p":"Les paroles ne nous appartiennent pas, alors nous vous les transmettons : un code à l'écran les ouvre sur votre téléphone, là où la lecture fonctionne vraiment.",
+  "s2.credit":"Le texte provient de Wikipédia et de MusicBrainz, et la source est indiquée à l'écran. Les paroles ne sont jamais copiées — seulement liées. Sans compte, sans abonnement, sans suivi — comme tout le reste ici.",
+  "s2.src1":"<b style=\"color:#F0EADD;font-weight:400\">D'où ROOTS tient ses informations.</b> ROOTS puise dans des sources ouvertes — Wikipédia, MusicBrainz et Wikidata — en partant de ce que la station envoie avec le morceau.",
+  "s2.src2":"Les stations décident de ce qu'elles envoient. Certaines transmettent le nom complet, d'autres une abréviation ou un nom mal orthographié, d'autres encore ajoutent le titre de l'émission à côté de l'artiste. Un nom ne peut pas toujours être retrouvé à partir de cela.",
+  "s2.src3":"Certains artistes ne figurent tout simplement pas dans ces sources — musiciens de studio, petits labels, noms régionaux. Les collaborations et les formations nommées d'après leur chef arrivent sur une seule ligne mais renvoient à plus d'une notice. Nous améliorons la reconnaissance des noms à chaque version.",
+  "s2.src4":"Quand ROOTS ne trouve rien, cela ne veut pas dire qu'il n'y a pas d'histoire. Cela veut dire qu'il n'y avait nulle part où la chercher cette fois-ci.",
+  "s3.tag":"Conçu pour la pièce, pas pour la poche",
+  "s3.h2":"Un téléviseur est un meuble. Il devrait <em>ressembler à quelque chose</em> quand la musique joue.",
+  "s3.c1h":"Deux écrans de veille hi-fi",
+  "s3.c1p":"Un tuner analogique avec aiguilles vivantes et vumètres qui bougent avec la musique, et un lecteur réseau à afficheur éclairé montrant la station, l'artiste et le format. Pas des fonds d'écran — des instruments.",
+  "s3.c2h":"Quatre thèmes, une photographie",
+  "s3.c2p":"Toute l'interface repose sur une seule image sombre d'une pièce d'écoute, si bien que cartes et listes se lisent comme du verre posé sur une surface, plutôt que comme des tuiles flottant sur du noir.",
+  "s3.c3h":"Réglage du bord de l'écran",
+  "s3.c3p":"Les téléviseurs anciens rognent l'image. La plupart des applications l'ignorent et laissent leurs bords tomber hors de votre écran. RadioTree vous laisse ajuster la marge, en quatre paliers.",
+  "s4.tag":"Elle continue de jouer",
+  "s4.h2":"La partie qui décide si vous gardez l'application.",
+  "s4.sub":"Une radio qui s'arrête n'est pas une radio. Celle-ci a été éprouvée sur cinq téléviseurs et trois versions d'Android jusqu'à ce qu'elle cesse de s'arrêter.",
+  "s4.l1":"Lecture en arrière-plan avec les commandes multimédia complètes d'Android TV, le logo de la station et les titres en direct sur l'écran d'accueil",
+  "s4.l2":"Reconnexion automatique avec temporisation quand le flux tombe — elle revient d'elle-même, sans que vous touchiez la télécommande",
+  "s4.l3":"La liste des stations est conservée sur l'appareil, si bien que l'application fonctionne encore quand le catalogue derrière elle ne fonctionne plus",
+  "s4.l4":"Les stations qui redirigent entre http et https jouent désormais au lieu d'échouer en silence, ce qui a discrètement ranimé une partie du catalogue",
+  "s5.tag":"Modifier, sur un téléviseur",
+  "s5.h2":"Quelques applications mobiles vous laissent ranger votre liste. <em>Aucune ne vit sur votre téléviseur.</em>",
+  "s5.sub":"Cherchez sur n'importe quel forum et vous trouverez la même plainte au sujet des grandes applications de radio pour téléviseur, depuis des années : impossible de renommer quoi que ce soit, impossible de réordonner quoi que ce soit, impossible de se débarrasser de ce qu'on n'écoute jamais. Le conseil habituel est de décompiler l'application et de la corriger soi-même. RadioTree vous laisse simplement le faire, la télécommande à la main.",
+  "s5.l1":"<b style=\"color:#F0EADD;font-weight:600\">Renommez n'importe quelle station.</b> Pas un dossier, pas un groupe de favoris — la station elle-même, sous le nom que vous lui donnez vraiment",
+  "s5.l2":"<b style=\"color:#F0EADD;font-weight:600\">Masquez ce que vous n'utilisez pas.</b> Des stations isolées, ou des pays entiers. Chacune revient dès que vous le voulez",
+  "s5.l3":"<b style=\"color:#F0EADD;font-weight:600\">Déplacez une station vers un autre genre</b> quand le catalogue range le jazz sous la pop, ce qui arrive souvent",
+  "s5.l4":"<b style=\"color:#F0EADD;font-weight:600\">Réordonnez les onglets</b> selon votre façon d'écouter, et épinglez les pays où vous revenez",
+  "s5.l5":"<b style=\"color:#F0EADD;font-weight:600\">Ajoutez vos propres adresses de flux,</b> pour la station dont le catalogue n'a jamais entendu parler",
+  "s5.l6":"Les noms surchargés du catalogue — débits, adresses web, « 24/7 BEST HITS » — sont nettoyés au passage, tandis que le vrai nom reste intact pour la recherche",
+  "s6.tag":"Celui dont personne d'autre ne s'est soucié",
+  "s6.h2":"Vous avez passé une soirée à bâtir votre liste. <em>Puis vous avez acheté un nouveau téléviseur.</em>",
+  "s6.sub":"Dans presque toutes les applications de radio, cette soirée est perdue. RadioTree exporte le profil entier — favoris, vos propres stations, renommages, éléments masqués, ordre des onglets, thème, langue, chaque réglage — et le remet exactement en l'état. Le transfert direct entre téléviseurs par le réseau domestique arrive dans la prochaine mise à jour.",
+  "s6.c1h":"Enregistrer sur l'appareil",
+  "s6.c1p":"Un fichier, écrit dans la mémoire du téléviseur lui-même. Il survit à une réinstallation et peut être récupéré par USB.",
+  "s6.c2h":"Rien à créer",
+  "s6.c2p":"Pas de compte, pas de nuage, pas d'adresse e-mail. La sauvegarde est un fichier sur votre propre téléviseur, et elle vous appartient.",
+  "s6.c3h":"Les paroles sur votre téléphone",
+  "s6.c3p":"Lire des paroles à trois mètres a toujours été une mauvaise idée. Appuyez sur le bouton, scannez le code, lisez-les là où la lecture fonctionne.",
+  "s7.tag":"Son",
+  "s7.h2":"Honnête sur ce qu'elle peut et ne peut pas faire.",
+  "s7.sub1":"Le décodage FLAC est bâti sur la bibliothèque multimédia de Google elle-même, et non greffé après coup. Pure Direct coupe chaque étage de traitement et grise l'égaliseur tant qu'il est actif, de sorte que le trajet du signal n'est pas affaire de croyance.",
+  "s7.sub2":"Ce que vous ne trouverez pas ici, c'est une promesse de sortie bit-perfect. Les téléviseurs Android font tourner leur audio à une fréquence fixe et aucune application ne peut y changer quoi que ce soit. Nous préférons le dire plutôt que de vous vendre un chiffre.",
+  "s8.tag":"Ce qu'elle ne fait pas",
+  "s8.h2":"Une liste courte, <em>délibérément.</em>",
+  "s8.l1":"Aucune publicité, jamais — ni bannières, ni spots audio",
+  "s8.l2":"Aucune analyse, aucun rapport de plantage, aucun suivi d'aucune sorte",
+  "s8.l3":"Aucun compte, aucune inscription, aucune adresse e-mail exigée",
+  "s8.l4":"Aucun abonnement — un paiement et l'application est à vous",
+  "s8.l5":"Aucune donnée ne quitte votre téléviseur. Il n'y a aucun serveur à nous à qui l'envoyer.",
+  "s8.quiet":"RadioTree est réalisée par <b style=\"color:#F0EADD;font-weight:400\">3 POINT TREE d.o.o.</b> en Croatie, et a été éprouvée sur cinq téléviseurs et trois générations d'Android avant d'être laissée sortir.",
+  "s9.tag":"Bientôt",
+  "s9.h2":"Quatre quatre-vingt-dix-neuf. Une fois.",
+  "s9.sub1":"Pour Android TV et Google TV. Croate, anglais, espagnol et français. Pas d'essai gratuit, parce qu'il n'y a rien derrière pour vous retenir.",
+  "s9.sub2":"RadioTree est terminée et en phase finale d'essais sur cinq téléviseurs. Elle arrive bientôt sur Google Play.",
+  "s9.btn":"Bientôt sur Google Play",
+  "s9.priv":"Lire la politique de confidentialité"
+}
+};
+
+const ORDER = ["hr","en","es","fr"];
+
+function pickLang(){
+  try{ const s = localStorage.getItem("rt_lang"); if (s && I18N[s]) return s; }catch(e){}
+  const nav = (navigator.languages || [navigator.language || "en"]);
+  for (const raw of nav){
+    const two = String(raw).slice(0,2).toLowerCase();
+    if (I18N[two]) return two;
+  }
+  return "en";
+}
+
+function applyLang(code){
+  const d = I18N[code] || I18N.en;
+  document.documentElement.lang = code;
+  document.title = d["meta.title"];
+  const md = document.querySelector('meta[name="description"]');
+  if (md) md.setAttribute("content", d["meta.desc"]);
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const v = d[el.getAttribute("data-i18n")];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll("#langs button").forEach(b =>
+    b.classList.toggle("on", b.dataset.l === code));
+  try{ localStorage.setItem("rt_lang", code); }catch(e){}
+}
+
+(function build(){
+  const box = document.getElementById("langs");
+  ORDER.forEach(c => {
+    const b = document.createElement("button");
+    b.type = "button"; b.dataset.l = c;
+    b.textContent = c.toUpperCase();
+    b.title = I18N[c]["lang.name"];
+    b.addEventListener("click", () => applyLang(c));
+    box.appendChild(b);
+  });
+  applyLang(pickLang());
+})();
+
+</script>
 
 </body>
 </html>
