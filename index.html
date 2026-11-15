@@ -22,6 +22,19 @@
     -webkit-font-smoothing:antialiased;overflow-x:hidden}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
+  /* ---------- top bar ---------- */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(8,10,14,.82);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar .row{display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:14px 0}
+  .mark{font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--ink);
+    text-decoration:none}
+  .mark span{color:var(--live)}
+  .navlinks{display:flex;align-items:center;gap:20px}
+  .navlinks a{font-size:14px;color:var(--dim);text-decoration:none}
+  .navlinks a:hover{color:var(--ink)}
+  @media(max-width:520px){.navlinks{gap:14px}.navlinks a{font-size:13px}.mark{font-size:17px}}
+
   /* ---------- banner hero ---------- */
   .banner{position:relative;display:block;overflow:hidden}
   .banner-img{position:relative;width:100%;aspect-ratio:1786/881;
@@ -144,7 +157,8 @@
         <li data-i18n="hero.p6"></li>
       </ul>
       <div class="cta">
-        <a class="btn" href="#features" data-i18n="hero.cta">See what it does</a>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=hr.radiotree.app" target="_blank" rel="noopener" data-i18n="hero.cta">Get it on Google Play</a>
+<a class="btn ghost" href="#features" data-i18n="hero.cta2">See what it does</a>
         <span class="price" data-i18n="hero.price"></span>
       </div>
     </div>
@@ -310,7 +324,7 @@
     <p class="sub" data-i18n="s9.sub1"></p>
     <p class="sub" data-i18n="s9.sub2"></p>
     <div class="cta">
-      <span class="btn" style="opacity:.55;cursor:default" data-i18n="s9.btn"></span>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=hr.radiotree.app" target="_blank" rel="noopener" data-i18n="s9.btn"></a>
       <a class="btn ghost" href="/privacy" data-i18n="s9.priv"></a>
     </div>
   </div>
@@ -319,7 +333,7 @@
 <footer>
   <div class="wrap row">
     <div>© 2026 3 POINT TREE d.o.o. · RadioTree</div>
-    <div><a href="/privacy" data-i18n="nav.privacy">Privacy</a> · <a href="mailto:support@radiotree.app">support@radiotree.app</a></div>
+    <div><a href="/privacy" data-i18n="nav.privacy">Privacy</a> · <a href="/terms" data-i18n="nav.terms">Terms</a> · <a href="mailto:support@radiotree.app">support@radiotree.app</a></div>
   </div>
 </footer>
 
@@ -334,7 +348,7 @@ en: {
   "lang.name":"English",
   "meta.title":"RadioTree — lossless internet radio, built for the television",
   "meta.desc":"Lossless internet radio for Android TV and Google TV. Curated FLAC stations, hi-fi screensavers, full profile backup. No ads, no tracking, no subscription.",
-  "nav.features":"Features", "nav.privacy":"Privacy",
+  "nav.features":"Features", "nav.privacy":"Privacy","nav.terms":"Terms",
   "hero.kicker":"For Android TV &amp; Google TV",
   "hero.tagline":"Every song has roots.",
   "hero.under":"Radio tells you the name. RadioTree tells you what it is — and where it came from.",
@@ -344,8 +358,8 @@ en: {
   "hero.p4":"<b>Who the artist is, what album the song came from</b> — one button, on screen",
   "hero.p5":"<b>Rename, hide and reorder anything</b> — with the remote in your hand",
   "hero.p6":"<b>Back up your whole profile</b> and restore it on another television",
-  "hero.cta":"See what it does",
-  "hero.price":"<b>Coming soon</b> to Google Play · one payment, €4.99 · no ads · no tracking · no subscription",
+  "hero.cta":"Get it on Google Play","hero.cta2":"See what it does",
+  "hero.price":"<b>On Google Play</b> · one payment · no ads · no tracking · no subscription",
   "s1.tag":"Curated, not just listed",
   "s1.h2":"Anyone can hand you <em>50,000 stations.</em> That is a database, not a product.",
   "s1.sub":"Most apps pour an open directory onto your screen and call it a catalogue. RadioTree adds the part nobody wants to do: choosing.",
@@ -411,11 +425,11 @@ en: {
   "s8.l4":"No subscription — one payment and the app is yours",
   "s8.l5":"No data leaves your television. There is no server of ours to send it to.",
   "s8.quiet":"RadioTree is made by <b style=\"color:#F0EADD;font-weight:400\">3 POINT TREE d.o.o.</b> in Croatia, and tested across five televisions and three generations of Android before it was allowed out.",
-  "s9.tag":"Coming soon",
-  "s9.h2":"Four ninety-nine. Once.",
+  "s9.tag":"Out now",
+  "s9.h2":"Pay once. Then it is yours.",
   "s9.sub1":"For Android TV and Google TV. Croatian, English, Spanish and French. No trial, because there is nothing to hook you into afterwards.",
-  "s9.sub2":"RadioTree is finished and in final testing across five televisions. It arrives on Google Play shortly.",
-  "s9.btn":"Coming soon to Google Play",
+  "s9.sub2":"It is on Google Play now. Search for RadioTree on your television, or use the button below.",
+  "s9.btn":"Get it on Google Play",
   "s9.priv":"Read the privacy policy"
 },
 
@@ -423,7 +437,7 @@ hr: {
   "lang.name":"Hrvatski",
   "meta.title":"RadioTree — internetski radio bez gubitaka, za televizor",
   "meta.desc":"Internetski radio bez gubitaka za Android TV i Google TV. Odabrane FLAC postaje, hi-fi čuvari zaslona, potpuna pohrana profila. Bez reklama, bez praćenja, bez pretplate.",
-  "nav.features":"Značajke", "nav.privacy":"Privatnost",
+  "nav.features":"Značajke", "nav.privacy":"Privatnost","nav.terms":"Uvjeti",
   "hero.kicker":"Za Android TV i Google TV",
   "hero.tagline":"Svaka pjesma ima korijen.",
   "hero.under":"Radio ti kaže ime. RadioTree ti kaže što je to — i odakle je došlo.",
@@ -433,8 +447,8 @@ hr: {
   "hero.p4":"<b>Tko je izvođač, s kojeg je albuma pjesma</b> — jedan gumb, na zaslonu",
   "hero.p5":"<b>Preimenuj, sakrij i posloži sve</b> — s daljinskim u ruci",
   "hero.p6":"<b>Spremi cijeli profil</b> i vrati ga na drugom televizoru",
-  "hero.cta":"Pogledaj što radi",
-  "hero.price":"<b>Uskoro</b> na Google Playu · jedna uplata, 4,99 € · bez reklama · bez praćenja · bez pretplate",
+  "hero.cta":"Preuzmi na Google Playu","hero.cta2":"Pogledaj što radi",
+  "hero.price":"<b>Na Google Playu</b> · jedna uplata · bez reklama · bez praćenja · bez pretplate",
   "s1.tag":"Odabrano, ne samo popisano",
   "s1.h2":"Svatko ti može dati <em>50.000 postaja.</em> To je baza, a ne proizvod.",
   "s1.sub":"Većina aplikacija prospe otvoreni imenik po zaslonu i nazove ga katalogom. RadioTree dodaje ono što nitko ne želi raditi: biranje.",
@@ -500,11 +514,11 @@ hr: {
   "s8.l4":"Bez pretplate — jedna uplata i aplikacija je tvoja",
   "s8.l5":"Nijedan podatak ne napušta tvoj televizor. Nema našeg poslužitelja kojemu bi se slao.",
   "s8.quiet":"RadioTree radi <b style=\"color:#F0EADD;font-weight:400\">3 POINT TREE d.o.o.</b> u Hrvatskoj, a isproban je na pet televizora i tri naraštaja Androida prije nego je pušten van.",
-  "s9.tag":"Uskoro",
-  "s9.h2":"Četiri devedeset devet. Jednom.",
+  "s9.tag":"Objavljeno",
+  "s9.h2":"Platiš jednom. I gotovo.",
   "s9.sub1":"Za Android TV i Google TV. Hrvatski, engleski, španjolski i francuski. Bez probnog razdoblja, jer te nakon njega nema na što navući.",
-  "s9.sub2":"RadioTree je gotov i u završnom ispitivanju na pet televizora. Uskoro stiže na Google Play.",
-  "s9.btn":"Uskoro na Google Playu",
+  "s9.sub2":"RadioTree je na Google Playu. Potraži ga na svom televizoru ili klikni gumb ispod.",
+  "s9.btn":"Preuzmi na Google Playu",
   "s9.priv":"Pročitaj pravila privatnosti"
 },
 
@@ -512,7 +526,7 @@ es: {
   "lang.name":"Español",
   "meta.title":"RadioTree — radio por internet sin pérdidas, hecha para el televisor",
   "meta.desc":"Radio por internet sin pérdidas para Android TV y Google TV. Emisoras FLAC seleccionadas, salvapantallas hi-fi, copia completa del perfil. Sin anuncios, sin rastreo, sin suscripción.",
-  "nav.features":"Funciones", "nav.privacy":"Privacidad",
+  "nav.features":"Funciones", "nav.privacy":"Privacidad","nav.terms":"Condiciones",
   "hero.kicker":"Para Android TV y Google TV",
   "hero.tagline":"Cada canción tiene raíces.",
   "hero.under":"La radio te dice el nombre. RadioTree te dice qué es — y de dónde viene.",
@@ -522,8 +536,8 @@ es: {
   "hero.p4":"<b>Quién es el artista, de qué álbum viene la canción</b> — un botón, en pantalla",
   "hero.p5":"<b>Renombra, oculta y reordena lo que quieras</b> — con el mando en la mano",
   "hero.p6":"<b>Guarda todo tu perfil</b> y restáuralo en otro televisor",
-  "hero.cta":"Mira lo que hace",
-  "hero.price":"<b>Próximamente</b> en Google Play · un solo pago, 4,99 € · sin anuncios · sin rastreo · sin suscripción",
+  "hero.cta":"Consíguela en Google Play","hero.cta2":"Mira lo que hace",
+  "hero.price":"<b>Ya en Google Play</b> · un solo pago · sin anuncios · sin rastreo · sin suscripción",
   "s1.tag":"Seleccionado, no solo listado",
   "s1.h2":"Cualquiera puede darte <em>50.000 emisoras.</em> Eso es una base de datos, no un producto.",
   "s1.sub":"La mayoría de las apps vuelca un directorio abierto en tu pantalla y lo llama catálogo. RadioTree añade la parte que nadie quiere hacer: elegir.",
@@ -589,11 +603,11 @@ es: {
   "s8.l4":"Sin suscripción — un pago y la app es tuya",
   "s8.l5":"Ningún dato sale de tu televisor. No hay servidor nuestro al que enviarlo.",
   "s8.quiet":"RadioTree está hecha por <b style=\"color:#F0EADD;font-weight:400\">3 POINT TREE d.o.o.</b> en Croacia, y se probó en cinco televisores y tres generaciones de Android antes de dejarla salir.",
-  "s9.tag":"Próximamente",
-  "s9.h2":"Cuatro noventa y nueve. Una vez.",
+  "s9.tag":"Ya disponible",
+  "s9.h2":"Pagas una vez. Y ya está.",
   "s9.sub1":"Para Android TV y Google TV. Croata, inglés, español y francés. Sin prueba gratuita, porque después no hay nada a lo que engancharte.",
-  "s9.sub2":"RadioTree está terminada y en pruebas finales en cinco televisores. Llega a Google Play en breve.",
-  "s9.btn":"Próximamente en Google Play",
+  "s9.sub2":"RadioTree ya está en Google Play. Búscala en tu televisor o pulsa el botón de abajo.",
+  "s9.btn":"Consíguela en Google Play",
   "s9.priv":"Lee la política de privacidad"
 },
 
@@ -601,7 +615,7 @@ fr: {
   "lang.name":"Français",
   "meta.title":"RadioTree — radio internet sans perte, pensée pour le téléviseur",
   "meta.desc":"Radio internet sans perte pour Android TV et Google TV. Stations FLAC sélectionnées, écrans de veille hi-fi, sauvegarde complète du profil. Sans publicité, sans suivi, sans abonnement.",
-  "nav.features":"Fonctions", "nav.privacy":"Confidentialité",
+  "nav.features":"Fonctions", "nav.privacy":"Confidentialité","nav.terms":"Conditions",
   "hero.kicker":"Pour Android TV et Google TV",
   "hero.tagline":"Chaque morceau a des racines.",
   "hero.under":"La radio vous donne le nom. RadioTree vous dit ce que c'est — et d'où cela vient.",
@@ -611,8 +625,8 @@ fr: {
   "hero.p4":"<b>Qui est l'artiste, de quel album vient le morceau</b> — un bouton, à l'écran",
   "hero.p5":"<b>Renommez, masquez et réorganisez tout</b> — la télécommande à la main",
   "hero.p6":"<b>Sauvegardez tout votre profil</b> et restaurez-le sur un autre téléviseur",
-  "hero.cta":"Voir ce qu'elle fait",
-  "hero.price":"<b>Bientôt</b> sur Google Play · un seul paiement, 4,99 € · sans publicité · sans suivi · sans abonnement",
+  "hero.cta":"Télécharger sur Google Play","hero.cta2":"Voir ce qu'elle fait",
+  "hero.price":"<b>Sur Google Play</b> · un seul paiement · sans publicité · sans suivi · sans abonnement",
   "s1.tag":"Sélectionné, pas seulement listé",
   "s1.h2":"N'importe qui peut vous donner <em>50 000 stations.</em> C'est une base de données, pas un produit.",
   "s1.sub":"La plupart des applications déversent un annuaire ouvert sur votre écran et appellent cela un catalogue. RadioTree ajoute ce que personne ne veut faire : choisir.",
@@ -678,11 +692,11 @@ fr: {
   "s8.l4":"Aucun abonnement — un paiement et l'application est à vous",
   "s8.l5":"Aucune donnée ne quitte votre téléviseur. Il n'y a aucun serveur à nous à qui l'envoyer.",
   "s8.quiet":"RadioTree est réalisée par <b style=\"color:#F0EADD;font-weight:400\">3 POINT TREE d.o.o.</b> en Croatie, et a été éprouvée sur cinq téléviseurs et trois générations d'Android avant d'être laissée sortir.",
-  "s9.tag":"Bientôt",
-  "s9.h2":"Quatre quatre-vingt-dix-neuf. Une fois.",
+  "s9.tag":"Disponible",
+  "s9.h2":"Vous payez une fois. C'est tout.",
   "s9.sub1":"Pour Android TV et Google TV. Croate, anglais, espagnol et français. Pas d'essai gratuit, parce qu'il n'y a rien derrière pour vous retenir.",
-  "s9.sub2":"RadioTree est terminée et en phase finale d'essais sur cinq téléviseurs. Elle arrive bientôt sur Google Play.",
-  "s9.btn":"Bientôt sur Google Play",
+  "s9.sub2":"RadioTree est sur Google Play. Cherchez-la sur votre téléviseur ou utilisez le bouton ci-dessous.",
+  "s9.btn":"Télécharger sur Google Play",
   "s9.priv":"Lire la politique de confidentialité"
 }
 };
